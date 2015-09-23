@@ -232,9 +232,34 @@ module IRC_Log
   end
 end
 
-
 module Comet
+  class Trapper < Struct.new(:app)
+    def initialize app
+      super
+      @lock = Mutex.new
+    end
+
+    def call env
+      trap(@lock) if @lock
+      app.call(env)
+    end
+
+    def trap lock
+      lock.synchronize do
+        %w[QUIT TERM INT].each do |sig|
+          orig_trap = Signal.trap(sig) do
+            Comet::App.quit = true # tell comet that we're quitting
+            orig_trap.call
+          end
+        end
+        @lock = nil
+      end
+    end
+  end
+
   class App
+    singleton_class.send(:attr_accessor, :quit)
+
     include Jellyfish, Routes
     controller_include Util, Module.new{
       def fetch_messages channel, date, time
@@ -249,7 +274,7 @@ module Comet
         (0...120).find do
           sleep(0.5)
           msgs = fetch_messages(channel, date, time)
-          break msgs if msgs
+          break msgs if msgs || Comet::App.quit
         end
       end
     }

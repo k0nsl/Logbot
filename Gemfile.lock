@@ -23,21 +23,22 @@ GEM
     multi_json (1.11.2)
     pork (1.4.2)
     rack (1.6.4)
-    rainbows (4.6.2)
-      kgio (~> 2.5)
-      rack (~> 1.1)
-      unicorn (~> 4.8)
     raindrops (0.15.0)
     rb-fsevent (0.9.6)
     rb-inotify (0.9.5)
       ffi (>= 0.5.0)
     redis (3.2.1)
     sass (3.4.18)
+    sleepy_penguin (3.4.1)
     thor (0.19.1)
     unicorn (4.9.0)
       kgio (~> 2.6)
       rack
       raindrops (~> 0.7)
+    yahns (1.9.0)
+      kgio (~> 2.9)
+      sleepy_penguin (~> 3.2)
+      unicorn (~> 4.6, >= 4.6.3)
 
 PLATFORMS
   ruby
@@ -48,10 +49,10 @@ DEPENDENCIES
   foreman
   jellyfish
   pork
-  rainbows
   redis
   sass
   trinidad
+  yahns
 
 BUNDLED WITH
    1.10.6

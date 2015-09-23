@@ -5,7 +5,15 @@ use Rack::CommonLogger
 use Rack::ContentLength
 use Rack::ContentType, 'text/html; charset=utf-8'
 
-run Rack::URLMap.new \
-  "/" => IRC_Log::App.new,
-  "/comet" => Comet::App.new,
-  "/assets" => Rack::Directory.new("public")
+map '/assets' do
+  run Rack::Directory.new('public')
+end
+
+map '/comet' do
+  use Comet::Trapper
+  run Comet::App.new
+end
+
+map '/' do
+  run IRC_Log::App.new
+end

@@ -10,7 +10,7 @@ group :server do
   gem 'foreman'
 
   platform(:ruby) do
-    gem 'rainbows'
+    gem 'yahns'
   end
 
   platform(:jruby) do

@@ -1,2 +1,2 @@
-web: rainbows -N -p 15000 -c rainbows.rb config.ru
+web: yahns -c yahns.rb
 logbot: ruby logbot.rb
