@@ -7,6 +7,8 @@ gem 'redis'     # used in web and agent
 
 # All of below are optional/selectional:
 group :server do
+  gem 'foreman'
+
   platform(:ruby) do
     gem 'rainbows'
   end

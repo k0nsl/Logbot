@@ -7,7 +7,7 @@ run     gpg --armor --export B9316A7BC7917B12 | apt-key add -
 run     apt-get update
 run     apt-get install --force-yes -y ruby1.9.1 rubygems redis-server
 add     .  /
-run     gem install bundler foreman
+run     gem install bundler
 run     apt-get install --force-yes -y ruby1.9.1-dev
 run     bundle install
 run     compass compile
