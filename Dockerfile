@@ -5,10 +5,10 @@ run     gpg --keyserver keyserver.ubuntu.com --recv-keys F5DA5F09C3173AA6 B9316A
 run     gpg --armor --export F5DA5F09C3173AA6 | apt-key add -
 run     gpg --armor --export B9316A7BC7917B12 | apt-key add -
 run     apt-get update
-run     apt-get install --force-yes -y ruby1.9.1 rubygems redis-server
+run     apt-get install --force-yes -y ca-certificates ruby2.2 redis-server
 add     .  /
-run     gem install bundler
-run     apt-get install --force-yes -y ruby1.9.1-dev
+run     gem install bundler --no-ri --no-rdoc
+run     apt-get install --force-yes -y build-essential ruby2.2-dev
 run     bundle install
 run     compass compile
 run     cp logbot.rb.example logbot.rb
