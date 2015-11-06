@@ -36,7 +36,7 @@ var pollNewMsg = function(isWidget) {
         var msgElement = $("<li id=\"" + $lis.length + "\">").addClass("new-arrival")
           .append($("<a class=\"time\" href=\"" + $("#today").text() + "#" + $lis.length + "\" target=\"_self\" title=\"#" + $lis.length + "\">").text(strftime(date))) // $("#today").text() gets nothing automatically when isWidget
           .append($("<span class=\"nick\">").text(msg["nick"]))
-          .append($("<span class=\"msg wordwrap\">").html(linkedMsg));
+          .append($("<span class=\"msg wordwrap\">").html(emoji(linkedMsg)));
         if (isWidget) {
           $(".logs").prepend(msgElement);
         }

@@ -232,7 +232,7 @@ var getColor = function() {
   return getColor_;
 }();
 
-setTimeout(function(){
+$(document).ready(function(){
   $("ul.logs li").each(function(){
     var nickField = $(this).children(".nick");
     
@@ -240,10 +240,10 @@ setTimeout(function(){
   });
   $(".wordwrap").each(function(){
     $(this).html(
-      parseColor($(this).html())
+      emoji(parseColor($(this).html()))
     );
   });
-} ,100);
+});
 
 var strftime = function(date) {
   var hour = date.getHours(),
@@ -291,7 +291,7 @@ var pollNewMsg = function(isWidget) {
           .append(link('nick', url + '/' + lis, msg['nick'])
                     .text(msg['nick'])
                     .css("color",getColor(msg['nick'])))
-          .append($("<span class=\"msg wordwrap\">").html(msg["msg"]).each(function(){
+          .append($("<span class=\"msg wordwrap\">").html(emoji(msg["msg"])).each(function(){
             $(this).html(
               parseColor($(this).html())
             );
