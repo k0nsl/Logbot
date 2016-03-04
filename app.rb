@@ -69,6 +69,8 @@ module Util
       '*'
     elsif nick = slack_nick(msg)
       escape("ⓢ #{nick}")
+    elsif nick = telegram_nick(msg)
+      escape("🅣 #{nick}")
     else
       escape(msg['nick'])
     end
@@ -94,11 +96,33 @@ module Util
     slack_data(msg).last
   end
 
+  def telegram_data msg
+    if msg['nick'].include?('g0vtelegrambot')
+      begin
+        return msg['msg'].match(/\A<(.+?)> (.+)\Z/)[1..2]
+      rescue
+        return []
+      end
+    else
+      []
+    end
+  end
+
+  def telegram_nick msg
+    telegram_data(msg).first
+  end
+
+  def telegram_msg msg
+    telegram_data(msg).last
+  end
+
   def user_text msg
     if act = user_action(msg)
       "<span class=\"nick\">#{escape(msg['nick'])}</span>" \
       "&nbsp;#{autolink(escape(act))}"
     elsif text = slack_msg(msg)
+      autolink(escape(text))
+    elsif text = telegram_msg(msg)
       autolink(escape(text))
     else
       autolink(escape(msg['msg']))
@@ -109,6 +133,8 @@ module Util
     if act = user_action(msg)
       "*#{escape(act)}*"
     elsif text = slack_msg(msg)
+      escape(text)
+    elsif text = telegram_msg(msg)
       escape(text)
     else
       escape(msg['msg'])
