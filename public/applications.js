@@ -214,7 +214,7 @@ var getColor = function() {
     
     if (typeof md5 !== "undefined") {
       var prefix = str.charAt(0);
-      var name = prefix == 'ⓢ' || prefix = '🅣' ? str.substr(2) : str;
+      var name = ((prefix == 'ⓢ' || prefix == '🅣') ? str.substr(2) : str);
       var frag = parseInt(md5(name).substring(0,6), 16);
     } else {
       var frag = Math.floor(Math.random() * 0xffffff);
