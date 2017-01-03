@@ -1,6 +1,6 @@
 # encoding: UTF-8
 
-require './app'
+require_relative '../app'
 require 'pork'
 Pork.autorun
 
