@@ -7,4 +7,5 @@
 public/index.html
 *.rdb
 /logbot.rb
+/Gemfile.lock
 /tmp
