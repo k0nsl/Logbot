@@ -2,6 +2,7 @@
 source 'https://rubygems.org'
 
 gem 'jellyfish' # web
+gem 'rack'      # web
 gem 'cinch'     # agent
 gem 'redis'     # used in web and agent
 
