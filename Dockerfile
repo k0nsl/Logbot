@@ -4,10 +4,10 @@ run     echo "deb http://ppa.launchpad.net/chris-lea/redis-server/ubuntu precise
 run     gpg --keyserver keyserver.ubuntu.com --recv-keys F5DA5F09C3173AA6 B9316A7BC7917B12
 run     gpg --armor --export F5DA5F09C3173AA6 | apt-key add -
 run     gpg --armor --export B9316A7BC7917B12 | apt-key add -
-run     apt-get update
-run     apt-get install --force-yes -y ca-certificates ruby2.2 redis-server
+run     apt-get update -qq
+run     apt-get install -qq --force-yes -y ca-certificates ruby2.2 redis-server
 add     .  /
-run     gem install bundler --no-ri --no-rdoc
+run     gem install bundler rack --no-ri --no-rdoc
 run     apt-get install --force-yes -y build-essential ruby2.2-dev
 run     bundle install
 run     compass compile
