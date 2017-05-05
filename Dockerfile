@@ -12,6 +12,7 @@ run     apt-get install --force-yes -y build-essential ruby2.2-dev
 run     bundle install
 run     compass compile
 run     cp logbot.rb.example logbot.rb
+run     /bin/sh post-receiv.sh
 expose  6379
 expose  15000
 env     LOGBOT_NICK logbot_
