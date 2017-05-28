@@ -16,6 +16,12 @@ How to Deploy
     2. Run `docker run -d -p 15000:15000 -e LOGBOT_NICK=xxxx -e LOGBOT_CHANNELS=#x,#y,#z -e LOGBOT_SERVER=168.95.1.1 audreyt/logbot`
     3. Visit [http://localhost:15000](http://localhost:15000)
 
+Building Docker image manually
+-------------
+* Run the following command
+`docker build -t logbot .`
+
+
 * Manual installation
     1. Ruby (1.9.3+) and Redis server must be installed
     2. Run `bundle install` to install required Ruby gems
