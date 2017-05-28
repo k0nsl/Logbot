@@ -5,7 +5,7 @@ services:
     image: logbot
     restart: unless-stopped
     volumes:
-      - ./uploads:/app/uploads
+      - ./home/k0nsl/logbot:/
     environment:
       - LOGBOT_SERVER=ragnarok.k0nsl.org
       - LOGBOT_CHANNELS=#k0nsl,#trinity,#thehax
