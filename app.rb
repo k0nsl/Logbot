@@ -97,7 +97,7 @@ module Util
   end
 
   def telegram_data msg
-    if msg['nick'].include?('g0vtelegrambot')
+    if msg['nick'].include?('benito')
       begin
         return msg['msg'].match(/\A<(.+?)> (.+)\Z/)[1..2]
       rescue
@@ -178,7 +178,7 @@ module IRC_Log
     controller_include Util
 
     get %r{^/?$} do
-      redirect "/channel/g0v.tw/today"
+      redirect "/channel/k0nsl/today"
     end
 
     get %r{^/?channel/#{CHANNEL}$} do |m|
@@ -248,9 +248,9 @@ module IRC_Log
           {
             :version       => "1.0",
             :type          => "link",
-            :title         => "Logbot | ##{@channel} | #{@nick}> #{@msg}",
+            :title         => "k0nsl-trunk | ##{@channel} | #{@nick}> #{@msg}",
             :author_name   => @nick,
-            :providor_name => "Logbot",
+            :providor_name => "k0nsl-trunk",
             :providor_url  => request.base_url
           }.to_json
         end
