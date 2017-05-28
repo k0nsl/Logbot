@@ -1,3 +1,4 @@
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/0c06454594834f66b7e7c1e115cdc9f9)](https://www.codacy.com/app/k0nsl/Logbot?utm_source=github.com&utm_medium=referral&utm_content=k0nsl/Logbot&utm_campaign=badger)
 Logbot [![Build Status](https://secure.travis-ci.org/k0nsl/Logbot.png?branch=master)](http://travis-ci.org/k0nsl/Logbot)
 
 # About
