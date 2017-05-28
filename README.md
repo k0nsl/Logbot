@@ -1,4 +1,4 @@
-Logbot [![Build Status](https://secure.travis-ci.org/g0v/Logbot.png?branch=master)](http://travis-ci.org/g0v/Logbot)
+Logbot [![Build Status](https://secure.travis-ci.org/k0nsl/Logbot.png?branch=master)](http://travis-ci.org/k0nsl/Logbot)
 
 # About
 Logbot is a simple IRC logger with realtime web-based viewer.
