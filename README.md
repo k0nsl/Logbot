@@ -5,24 +5,21 @@
 Logbot is a simple IRC logger with realtime web-based viewer.
 
 
-Screenshot
-----------
+# Screenshot
 ![Logbot screenshot](https://raw.github.com/k0nsl/Logbot/master/screenshot.png)
 
 
-How to Deploy
--------------
+# How to Deploy
 * Use Docker
     1. Install [Docker](https://www.docker.com/)
-    2. Run `docker run -d -p 15000:15000 -e LOGBOT_NICK=xxxx -e LOGBOT_CHANNELS=#x,#y,#z -e LOGBOT_SERVER=168.95.1.1 audreyt/logbot`
+    2. Run `docker run -d -p 15000:15000 -v /home/k0nsl/logbot:/etc/logbot -e LOGBOT_NICK=genericnondescripguy -e LOGBOT_CHANNELS=#k0nsl,#trinity,#thehax -e LOGBOT_SERVER=ragnarok.k0nsl.org logbot`
     3. Visit [http://localhost:15000](http://localhost:15000)
 
-Building Docker image manually
--------------
+# Building Docker image manually
+
 * Run the following command
     1. `docker build -t logbot .`
-    2. Then `docker-compose up -d`
-
+    2. Then `docker-compose up -d` (or use cmd in "How to Deploy")
 
 * Manual installation
     1. Ruby (1.9.3+) and Redis server must be installed
@@ -34,13 +31,34 @@ Building Docker image manually
     7. Visit [http://localhost:15000](http://localhost:15000).
 
 
-How to Contribute
------------------
+# Reverse proxy setup with Caddy
+
+First find the IP of the docker container by issuing `docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' <container-id>` and make a note of it.
+
+## Caddy configuration
+
+This is the configuration used for https://genericnondescripguy.k0nsl.org
+```
+https://genericnondescripguy.k0nsl.org {
+root /home/generic01/www
+gzip
+errors /dev/null
+    proxy / 172.19.0.2:15000 {
+        websocket
+        header_upstream X-Forwarded-Proto {scheme}
+        header_upstream X-Forwarded-For {host}
+        header_upstream Host {host}
+    }
+}
+````
+
+# How to Contribute
+
 Just hack it and send me pull requests ;)
 
 
-License
--------
+# License
+
 Licensed under the [MIT license](http://opensource.org/licenses/mit-license.php).
 
 Copyright (c) 2013 Shao-Chung Chen
