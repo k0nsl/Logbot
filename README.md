@@ -1,4 +1,5 @@
-Logbot [![Build Status](https://secure.travis-ci.org/k0nsl/Logbot.png?branch=master)](http://travis-ci.org/k0nsl/Logbot)
+[![Build Status](https://secure.travis-ci.org/k0nsl/Logbot.png?branch=master)](http://travis-ci.org/k0nsl/Logbot)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/0c06454594834f66b7e7c1e115cdc9f9)](https://www.codacy.com/app/k0nsl/Logbot?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=k0nsl/Logbot&amp;utm_campaign=Badge_Grade)
 
 # About
 Logbot is a simple IRC logger with realtime web-based viewer.
