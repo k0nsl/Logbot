@@ -7,7 +7,6 @@ run     gpg --armor --export B9316A7BC7917B12 | apt-key add -
 run     apt-get update -qq
 run     apt-get install -qq --force-yes -y ca-certificates ruby2.2 redis-server
 add     .  /
-run     gem install bundler rack --no-ri --no-rdoc
 run     apt-get install --force-yes -y build-essential ruby2.2-dev
 run     bundle install
 run     compass compile
