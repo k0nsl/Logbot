@@ -2,12 +2,12 @@
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/0c06454594834f66b7e7c1e115cdc9f9)](https://www.codacy.com/app/k0nsl/Logbot?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=k0nsl/Logbot&amp;utm_campaign=Badge_Grade)
 
 # About
-Logbot is a simple IRC logger with a realtime web-based UI.
+Logbot is a simple IRC logger with realtime web-based viewer.
 
 
 Screenshot
 ----------
-![Logbot screenshot](https://raw.github.com/g0v/Logbot/master/screenshot.png)
+![Logbot screenshot](https://raw.github.com/k0nsl/Logbot/master/screenshot.png)
 
 
 How to Deploy

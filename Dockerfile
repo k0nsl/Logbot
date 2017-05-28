@@ -12,7 +12,7 @@ run     apt-get install -qq --force-yes -y build-essential ruby2.2-dev
 run     bundle install
 run     compass compile
 run     cp logbot.rb.example logbot.rb
-run     cp dump.rdb.example dump.rdb
+run	cp dump.rdb.example dump.rdb
 run     cp redis.conf /etc/redis/redis.conf
 expose  6379
 expose  15000

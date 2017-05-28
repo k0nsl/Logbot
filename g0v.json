@@ -1,11 +1,10 @@
 {
-  "author": "dannvix",
+  "author": "k0nsl (i.am@k0nsl.org)",
   "status": "stable",
   "name": "Logbot",
   "name_zh": "Logbot",
   "description": "Simple IRC logger with realtime web-based viewer",
-  "description_zh": "會即時更新的簡易 IRC 記錄",
-  "homepage": "http://logbot.g0v.tw/",
+  "homepage": "https://genericnondescripguy.k0nsl.org",
   "thumbnail": "https://raw.github.com/g0v/Logbot/master/screenshot-1.png",
   "repository": "git@github.com:g0v/Logbot.git",
   "license": "MIT",

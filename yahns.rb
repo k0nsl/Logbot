@@ -1,4 +1,3 @@
-
 # http://yahns.yhbt.net/yahns_config.txt
 queue do
   worker_threads Integer(ENV['YAHNS_THREADS'] || 50)
