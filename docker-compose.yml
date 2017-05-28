@@ -4,8 +4,8 @@ services:
   logbot:
     image: logbot
     restart: unless-stopped
-    expose:
-     - "15000"
+#    expose:
+#     - "15000:15000"
     volumes:
       - ./:/home/k0nsl/logbot
     environment:
