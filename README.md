@@ -1,6 +1,6 @@
 Logbot [![Build Status](https://secure.travis-ci.org/g0v/Logbot.png?branch=master)](http://travis-ci.org/g0v/Logbot)
 
-======
+# About
 Logbot is a simple IRC logger with realtime web-based viewer.
 
 
@@ -19,7 +19,8 @@ How to Deploy
 Building Docker image manually
 -------------
 * Run the following command
-`docker build -t logbot .`
+    1. `docker build -t logbot .`
+    2. Then `docker-compose up -d`
 
 
 * Manual installation
