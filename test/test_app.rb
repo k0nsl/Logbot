@@ -45,10 +45,6 @@ Pork::API.describe Util do
     verify_text('ⓢ name', 'nick' => '_slack_bot1', 'msg' => '<name> <hi> hi')
   end
 
-  would 'for telegram user' do
-    verify_text('🅣 name', 'nick' => 'g0vtelegrambot', 'msg' => '<name> <hi> hi')
-  end
-
   would 'for action' do
     msg = {'nick' => 'name', 'msg' => "\u0001ACTION hug\u0001"}
 
